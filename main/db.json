@@ -1,0 +1,58 @@
+{
+  "clienti": [
+    {
+      "id": "3",
+      "nume": "Maria",
+      "prenume": "Aurelia",
+      "email": "aurelia.maria@yahoo.com",
+      "telefon": "0796442459",
+      "id_masina": [
+        "1",
+        "2"
+      ]
+    },
+    {
+      "id": "4",
+      "nume": "Andrei",
+      "prenume": "Aurelia",
+      "email": "aurelia.maria@yahoo.com",
+      "telefon": "0796442459",
+      "id_masina": "3"
+    }
+  ],
+  "masini": [
+    {
+      "id": "1",
+      "numarInmatriculare": "B 01 ABC",
+      "serieSasiu": "123FD344432",
+      "marca": "Mecedes",
+      "model": "AMG GT 63 S",
+      "anFabricatie": "2023",
+      "tipMotorizare": "disel",
+      "capacitateMotor": "2.0",
+      "caiPutere": "240"
+    },
+    {
+      "id": "2",
+      "numarInmatriculare": "PH 01 ANA",
+      "serieSasiu": "FV2131231233",
+      "marca": "AUDI",
+      "model": "A6",
+      "anFabricatie": "2020",
+      "tipMotorizare": "electric",
+      "capacitateMotor": "1.9",
+      "caiPutere": "200"
+    },
+    {
+      "id": "3",
+      "numarInmatriculare": "b 123 reb",
+      "serieSasiu": "FV2131231233",
+      "marca": "AUDI",
+      "model": "A6",
+      "anFabricatie": "2020",
+      "tipMotorizare": "electric",
+      "capacitateMotor": "1.9",
+      "caiPutere": "200"
+    }
+  ]
+}

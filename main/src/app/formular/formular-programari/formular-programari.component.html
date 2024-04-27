@@ -1,0 +1,32 @@
+
+
+<form (ngSubmit)="submitForm()" #programareForm="ngForm">
+    <mat-form-field>
+      <mat-label>Mașina</mat-label>
+      <input matInput name="masina" [(ngModel)]="programare.masina" required>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Acțiune</mat-label>
+      <input matInput name="actiune" [(ngModel)]="programare.actiune" required>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Modalitate de contact</mat-label>
+      <mat-select name="modalitateContact" [(ngModel)]="programare.modalitateContact" required>
+        <mat-option value="email">Email</mat-option>
+        <mat-option value="telefon">Telefon</mat-option>
+        <mat-option value="personal">Personal</mat-option>
+      </mat-select>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Interval de timp (între 8 și 17)</mat-label>
+      <input matInput type="time" name="intervalTimp" [(ngModel)]="programare.intervalTimp" required>
+    </mat-form-field>
+  
+    <button mat-raised-button color="primary" type="submit" [disabled]="!programareForm.valid">Programare</button>
+  </form>
+   
+
+ 
