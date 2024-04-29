@@ -40,6 +40,7 @@ import { FormularServiceService } from './formular/formular-service.service';
     HeaderComponent,
     BrandingComponent,
     AppNavItemComponent,
+    FormularProgramariComponent
 
   ],
   imports: [

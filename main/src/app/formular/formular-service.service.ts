@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpContext, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -6,9 +6,17 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class FormularServiceService {
-  private baseUrl = 'http://localhost:3000/programari';
-  constructor(private http: HttpClient) { }
-  saveProgramare(programareData: any): Observable<any> {
-    return this.http.post(`${this.baseUrl}`, programareData);
+  private baseUrl = 'http://localhost:3000/'; // Replace with your actual server URL
+
+  constructor(private httpClient: HttpClient) { }
+
+  saveProgramare(formData: any): Observable<any> { // Use 'any' for broader compatibility
+    return this.httpClient.post(this.baseUrl + 'programari', formData);
   }
+
+  
 }
+
+
+
+  

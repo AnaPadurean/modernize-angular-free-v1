@@ -36,4 +36,16 @@ export const navItems: NavItem[] = [
     route: '/formular',
   },
 
+  {
+    displayName: 'Inregistrare reparatii',
+    iconName: 'list',
+    route: '/reparatii',
+  },
+  {
+    displayName: 'Liste reparatii',
+    iconName: 'badge',
+    route: '/listaReparatii',
+  },
+  
+
 ];

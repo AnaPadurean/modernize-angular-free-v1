@@ -7,6 +7,8 @@ import { ɵInternalFormsSharedModule } from '@angular/forms';
 import { ClientsComponent } from './clients/clients.component';
 import { MasiniComponent } from './masini/masini/masini.component';
 import { FormularProgramariComponent } from 'src/app/formular/formular-programari/formular-programari.component';
+import { ReparatiiComponent } from './reparatii/reparatii.component';
+import { ListaReparatiiComponent } from './lista-reparatii/lista-reparatii.component';
 const routes: Routes = [
   {
     path: '',
@@ -28,6 +30,14 @@ const routes: Routes = [
       },
       {
         path: 'formular', component: FormularProgramariComponent
+        
+      },
+      {
+        path: 'reparatii', component: ReparatiiComponent
+        
+      },
+      {
+        path: 'listaReparatii', component: ListaReparatiiComponent
         
       },
       {

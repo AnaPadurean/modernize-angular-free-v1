@@ -15,7 +15,8 @@ import {
   ApexMarkers,
   ApexResponsive,
 } from 'ng-apexcharts';
-
+import {  OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 interface month {
   value: string;
   viewValue: string;
@@ -86,44 +87,7 @@ interface productcards {
   rprice: string;
 }
 
-const ELEMENT_DATA: productsData[] = [
-  {
-    id: 1,
-    imagePath: 'assets/images/profile/user-1.jpg',
-    uname: 'Sunil Joshi',
-    position: 'Web Designer',
-    productName: 'Elite Admin',
-    budget: 3.9,
-    priority: 'low',
-  },
-  {
-    id: 2,
-    imagePath: 'assets/images/profile/user-2.jpg',
-    uname: 'Andrew McDownland',
-    position: 'Project Manager',
-    productName: 'Real Homes Theme',
-    budget: 24.5,
-    priority: 'medium',
-  },
-  {
-    id: 3,
-    imagePath: 'assets/images/profile/user-3.jpg',
-    uname: 'Christopher Jamil',
-    position: 'Project Manager',
-    productName: 'MedicalPro Theme',
-    budget: 12.8,
-    priority: 'high',
-  },
-  {
-    id: 4,
-    imagePath: 'assets/images/profile/user-4.jpg',
-    uname: 'Nirav Joshi',
-    position: 'Frontend Engineer',
-    productName: 'Hosting Press HTML',
-    budget: 2.4,
-    priority: 'critical',
-  },
-];
+
 
 @Component({
   selector: 'app-dashboard',
@@ -137,8 +101,6 @@ export class AppDashboardComponent {
   public yearlyChart!: Partial<yearlyChart> | any;
   public monthlyChart!: Partial<monthlyChart> | any;
 
-  displayedColumns: string[] = ['assigned', 'name', 'priority', 'budget'];
-  dataSource = ELEMENT_DATA;
 
   months: month[] = [
     { value: 'mar', viewValue: 'March 2023' },
@@ -146,78 +108,35 @@ export class AppDashboardComponent {
     { value: 'june', viewValue: 'June 2023' },
   ];
 
-  // recent transaction
-  stats: stats[] = [
-    {
-      id: 1,
-      time: '09.30 am',
-      color: 'primary',
-      subtext: 'Payment received from John Doe of $385.90',
-    },
-    {
-      id: 2,
-      time: '10.30 am',
-      color: 'accent',
-      title: 'New sale recorded',
-      link: '#ML-3467',
-    },
-    {
-      id: 3,
-      time: '12.30 pm',
-      color: 'success',
-      subtext: 'Payment was made of $64.95 to Michael',
-    },
-    {
-      id: 4,
-      time: '12.30 pm',
-      color: 'warning',
-      title: 'New sale recorded',
-      link: '#ML-3467',
-    },
-    {
-      id: 5,
-      time: '12.30 pm',
-      color: 'error',
-      title: 'New arrival recorded',
-      link: '#ML-3467',
-    },
-    {
-      id: 6,
-      time: '12.30 pm',
-      color: 'success',
-      subtext: 'Payment Done',
-    },
-  ];
-
   // ecommerce card
   productcards: productcards[] = [
     {
       id: 1,
-      imgSrc: '/assets/images/products/s4.jpg',
-      title: 'Boat Headphone',
-      price: '285',
-      rprice: '375',
+      imgSrc: '/assets/images/products/audi.jpg',
+      title: 'Audi',
+      price: '30.000',
+      rprice: '40.000',
     },
     {
       id: 2,
-      imgSrc: '/assets/images/products/s5.jpg',
-      title: 'MacBook Air Pro',
-      price: '285',
-      rprice: '375',
+      imgSrc: '/assets/images/products/car.jpg',
+      title: 'Ford GT',
+      price: '50.000',
+      rprice: '55.000',
     },
     {
       id: 3,
-      imgSrc: '/assets/images/products/s7.jpg',
-      title: 'Red Valvet Dress',
-      price: '285',
-      rprice: '375',
+      imgSrc: '/assets/images/products/lambo.jpg',
+      title: 'Lamborghini Revuelto',
+      price: '100.000',
+      rprice: '110.000',
     },
     {
       id: 4,
-      imgSrc: '/assets/images/products/s11.jpg',
-      title: 'Cute Soft Teddybear',
-      price: '285',
-      rprice: '375',
+      imgSrc: '/assets/images/products/porsche.jpg',
+      title: 'Porche GT',
+      price: '150.000',
+      rprice: '150.500',
     },
   ];
 
@@ -226,15 +145,11 @@ export class AppDashboardComponent {
     this.salesOverviewChart = {
       series: [
         {
-          name: 'Eanings this month',
-          data: [355, 390, 300, 350, 390, 180, 355, 390],
+          name: 'Cai putere',
+          data: [300, 150, 200, 139, 250, 190, 140, 180],
           color: '#5D87FF',
         },
-        {
-          name: 'Expense this month',
-          data: [280, 250, 325, 215, 250, 310, 280, 250],
-          color: '#49BEFF',
-        },
+       
       ],
 
       grid: {
@@ -264,14 +179,14 @@ export class AppDashboardComponent {
       xaxis: {
         type: 'category',
         categories: [
-          '16/08',
-          '17/08',
-          '18/08',
-          '19/08',
-          '20/08',
-          '21/08',
-          '22/08',
-          '23/08',
+          'Mercedes',
+          'Renault',
+          'Audi',
+          'Ford',
+          'BMW',
+          'Nissan',
+          'Dacia',
+          'Honda',
         ],
         labels: {
           style: { cssClass: 'grey--text lighten-2--text fill-color' },
